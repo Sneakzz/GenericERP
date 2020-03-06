@@ -23,8 +23,8 @@
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="136,249,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPostcode" HorizontalAlignment="Left" Height="23" Margin="136,307,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cmbLand" HorizontalAlignment="Left" Margin="136,280,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnKlantAanmaken" Content="Klant aanmaken" HorizontalAlignment="Left" Margin="28,354,0,0" VerticalAlignment="Top" Width="228" Height="30"/>
-        <Button x:Name="btnLaden" Content="Klanten laden" HorizontalAlignment="Left" Margin="521,30,0,0" VerticalAlignment="Top" Width="208" Height="32"/>
+        <Button x:Name="btnKlantAanmaken" Content="Klant aanmaken" HorizontalAlignment="Left" Margin="28,354,0,0" VerticalAlignment="Top" Width="228" Height="30" Click="btnKlantAanmaken_Click"/>
+        <Button x:Name="btnLaden" Content="Klanten laden" HorizontalAlignment="Left" Margin="521,30,0,0" VerticalAlignment="Top" Width="208" Height="32" Click="btnLaden_Click"/>
         <ListBox x:Name="lstKlanten" HorizontalAlignment="Left" Height="294" Margin="348,90,0,0" VerticalAlignment="Top" Width="427"/>
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,35 @@ namespace GenericERP
             InitializeComponent();
         }
 
+        private void btnLaden_Click(object sender, RoutedEventArgs e)
+        {
+         
+        }
 
+        private void btnKlantAanmaken_Click(object sender, RoutedEventArgs e)
+        {
+            string connectionString = null;
+            SqlConnection cnn;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string sql = null;
+            connectionString = "\\SQLEXPRESS";
+
+            cnn = new SqlConnection(connectionString);
+            sql = "insert into Klanten (voornaam, familienaam, gsm, email, adres, stad, postcode, country)";
+
+
+
+            try
+            {
+                cnn.Open();
+                adapter.InsertCommand = new SqlCommand(sql, cnn);
+                adapter.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show("ingegeven");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
