@@ -23,5 +23,16 @@ namespace GenericERP
         {
             InitializeComponent();
         }
+
+        private void cmbLand_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+
+            cmbLand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+
+        }
     }
 }
