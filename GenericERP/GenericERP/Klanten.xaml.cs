@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -32,28 +33,52 @@ namespace GenericERP
 
         private void btnKlantAanmaken_Click(object sender, RoutedEventArgs e)
         {
-            string connectionString = null;
-            SqlConnection cnn;
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            string connetionString = null;
             string sql = null;
-            connectionString = "\\SQLEXPRESS";
 
-            cnn = new SqlConnection(connectionString);
-            sql = "insert into Klanten (voornaam, familienaam, gsm, email, adres, stad, postcode, country)";
+            // All the info required to reach your db. See connectionstrings.com
+            connetionString = ".\\SQLEXPRESS;Initial Catalog=Air; Trusted_Connection=True;";
 
+            // Prepare a proper parameterized query 
+            sql = "insert into Main ([Firt Name], [Last Name]) values(@first,@last)";
 
-
-            try
+            // Create the connection (and be sure to dispose it at the end)
+            using (SqlConnection cnn = new SqlConnection(connetionString))
             {
-                cnn.Open();
-                adapter.InsertCommand = new SqlCommand(sql, cnn);
-                adapter.InsertCommand.ExecuteNonQuery();
-                MessageBox.Show("ingegeven");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+                try
+                {
+                    // Open the connection to the database. 
+                    // This is the first critical step in the process.
+                    // If we cannot reach the db then we have connectivity problems
+                    cnn.Open();
+
+                    // Prepare the command to be executed on the db
+                    using (SqlCommand cmd = new SqlCommand(sql, cnn))
+                    {
+                        // Create and set the parameters values 
+                        cmd.Parameters.Add("@first", SqlDbType.NVarChar).Value = txtNaam.Text;
+                        cmd.Parameters.Add("@last", SqlDbType.NVarChar).Value = txtFamilieNaam.Text;
+
+                        // Let's ask the db to execute the query
+                        int rowsAdded = cmd.ExecuteNonQuery();
+                        if (rowsAdded > 0)
+                            MessageBox.Show("Row inserted!!");
+                        else
+                            // Well this should never really happen
+                            MessageBox.Show("No row inserted");
+                    }
+                }
+
+
+
+                catch (Exception ex)
+                {
+                    // We should log the error somewhere, 
+                    // for this example let's just show a message
+                    MessageBox.Show("ERROR:" + ex.Message);
+                }
             }
         }
+        }
     }
-}
+
