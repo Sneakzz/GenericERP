@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GenericERP"
         mc:Ignorable="d"
         Title="Klanten" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FF383838">
         <Label Content="Voornaam:" HorizontalAlignment="Left" Margin="28,48,0,0" VerticalAlignment="Top" Width="82"/>
         <Label Content="Familienaam:" HorizontalAlignment="Left" Margin="28,90,0,0" VerticalAlignment="Top" Width="82"/>
         <Label Content="adres:" HorizontalAlignment="Left" Margin="28,131,0,0" VerticalAlignment="Top" Width="82"/>
@@ -15,15 +15,18 @@
         <Label Content="email:" HorizontalAlignment="Left" Margin="28,245,0,0" VerticalAlignment="Top" Width="82"/>
         <Label Content="country:" HorizontalAlignment="Left" Margin="28,276,0,0" VerticalAlignment="Top" Width="82"/>
         <Label Content="postcode:" HorizontalAlignment="Left" Margin="28,307,0,0" VerticalAlignment="Top" Width="82"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="136,51,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="136,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="136,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="136,214,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="136,175,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="136,249,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="136,307,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cmbLand" HorizontalAlignment="Left" Margin="136,280,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbLand_SelectionChanged"/>
-        
+        <TextBox x:Name="txtNaam" HorizontalAlignment="Left" Height="23" Margin="136,51,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtFamilieNaam" HorizontalAlignment="Left" Height="23" Margin="136,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAdres" HorizontalAlignment="Left" Height="23" Margin="136,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtGsm" HorizontalAlignment="Left" Height="23" Margin="136,214,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtStad" HorizontalAlignment="Left" Height="23" Margin="136,175,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="136,249,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPostcode" HorizontalAlignment="Left" Height="23" Margin="136,307,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmbLand" HorizontalAlignment="Left" Margin="136,280,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnKlantAanmaken" Content="Klant aanmaken" HorizontalAlignment="Left" Margin="28,354,0,0" VerticalAlignment="Top" Width="228" Height="30"/>
+        <Button x:Name="btnLaden" Content="Klanten laden" HorizontalAlignment="Left" Margin="521,30,0,0" VerticalAlignment="Top" Width="208" Height="32"/>
+        <ListBox x:Name="lstKlanten" HorizontalAlignment="Left" Height="294" Margin="348,90,0,0" VerticalAlignment="Top" Width="427"/>
+
 
 
     </Grid>
