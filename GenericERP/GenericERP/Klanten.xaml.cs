@@ -24,6 +24,10 @@ namespace GenericERP
         public Klanten()
         {
             InitializeComponent();
+            cmbLand.Items.Add("Belgium");
+            cmbLand.Items.Add("France");
+            cmbLand.Items.Add("Germany");
+            cmbLand.Items.Add("UK");
         }
 
         private void btnLaden_Click(object sender, RoutedEventArgs e)
@@ -37,10 +41,10 @@ namespace GenericERP
             string sql = null;
 
             // All the info required to reach your db. See connectionstrings.com
-            connetionString = "Server=DESKTOP-RE8EGMK\\SQLEXPRESS; Database=ERP;Trusted_Connection=True";
+            connetionString = "Server=localhost; Database=ERP;Trusted_Connection=True";
 
-            // Prepare a proper parameterized query 
-            sql = "insert into Klanten ([voornaam], [familienaam]) values(@first,@last)";
+            // Prepare a proper parameterized query
+            sql = "insert into Klanten ([voornaam], [familienaam], [gsm], [email], [adres], [stad], [postcode], [country]) values(@first,@last,@gsm,@email,@adres,@stad,@postcode,@country)";
 
             // Create the connection (and be sure to dispose it at the end)
             using (SqlConnection cnn = new SqlConnection(connetionString))
@@ -58,6 +62,12 @@ namespace GenericERP
                         // Create and set the parameters values 
                         cmd.Parameters.Add("@first", SqlDbType.NVarChar).Value = txtNaam.Text;
                         cmd.Parameters.Add("@last", SqlDbType.NVarChar).Value = txtFamilieNaam.Text;
+                        cmd.Parameters.Add("@gsm", SqlDbType.NVarChar).Value = txtGsm.Text;
+                        cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = txtEmail.Text;
+                        cmd.Parameters.Add("@adres", SqlDbType.NVarChar).Value = txtAdres.Text;
+                        cmd.Parameters.Add("@stad", SqlDbType.NVarChar).Value = txtStad.Text;
+                        cmd.Parameters.Add("@postcode", SqlDbType.NVarChar).Value = txtPostcode.Text;
+                        cmd.Parameters.Add("@country", SqlDbType.NVarChar).Value = cmbLand.SelectedItem != null ? cmbLand.SelectedItem : "Belgium";
 
                         // Let's ask the db to execute the query
                         int rowsAdded = cmd.ExecuteNonQuery();
