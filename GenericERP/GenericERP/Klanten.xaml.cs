@@ -37,7 +37,7 @@ namespace GenericERP
             string sql = null;
 
             // All the info required to reach your db. See connectionstrings.com
-            connetionString = ".\\SQLEXPRESS;Initial Catalog=Air; Trusted_Connection=True;";
+            connetionString = ".\\SQLEXPRESS;Initial Catalog=Air; Trusted_Connection=False;";
 
             // Prepare a proper parameterized query 
             sql = "insert into Main ([Firt Name], [Last Name]) values(@first,@last)";
