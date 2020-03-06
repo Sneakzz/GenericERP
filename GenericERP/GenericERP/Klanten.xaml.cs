@@ -15,23 +15,13 @@ using System.Windows.Shapes;
 namespace GenericERP
 {
     /// <summary>
-    /// Interaction logic for Dashbord.xaml
+    /// Interaction logic for Klanten.xaml
     /// </summary>
-    public partial class Dashbord : Window
+    public partial class Klanten : Window
     {
-        public Dashbord()
+        public Klanten()
         {
             InitializeComponent();
-        }
-
-        private void btnKlanten_Click(object sender, RoutedEventArgs e)
-        {
-           Klanten p = new Klanten();
-            p.Show();
-
-            Dashbord s = new Dashbord();
-            App.Current.MainWindow.Close();
-            this.Close();
         }
     }
 }

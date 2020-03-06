@@ -35,8 +35,26 @@ namespace GenericERP
             {
                 MessageBox.Show("verkeerde login naam");               
             }
+         
             Dashbord p  = new Dashbord();
             p.Show();
+            MainWindow c = new MainWindow();
+            App.Current.MainWindow.Close();
+           
+        }
+
+
+        private void pwbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtLogin.Text != mainLogin || pwbPassword.Password != password)
+            {
+                MessageBox.Show("verkeerde login naam");
+            }
+
+            Dashbord p = new Dashbord();
+            p.Show();
+            MainWindow c = new MainWindow();
+            App.Current.MainWindow.Close();
         }
     }
 }

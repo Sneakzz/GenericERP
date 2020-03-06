@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="558" Width="896">
     <Grid>
-        <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Height="51" Margin="284,206,0,0" TextWrapping="Wrap" Text="enter username" VerticalAlignment="Top" Width="276"/>
-        <PasswordBox x:Name="pwbPassword" HorizontalAlignment="Left" Margin="284,273,0,0" VerticalAlignment="Top" Width="276" Height="49"/>
-        <Button x:Name="btnLogin" Content="Log In" HorizontalAlignment="Left" Margin="284,347,0,0" VerticalAlignment="Top" Width="276" Height="39" Click="btnLogi_Click"/>
+        <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Height="51" Margin="284,201,0,0" TextWrapping="Wrap" Text="enter username" VerticalAlignment="Top" Width="276"/>
+        <PasswordBox x:Name="pwbPassword" HorizontalAlignment="Left" Margin="284,273,0,0" VerticalAlignment="Top" Width="276" Height="49" />
+        <Button x:Name="btnLogin" Content="Log In" HorizontalAlignment="Left" Margin="284,347,0,0" VerticalAlignment="Top" Width="276" Height="39" Click="btnLogi_Click" />
 
     </Grid>
 </Window>
