@@ -23,12 +23,13 @@ namespace GenericERP
         public MainWindow()
         {
             InitializeComponent();
+            Console.WriteLine("Je Moeder Is TruckChauffeur!!!");
         }
 
         string mainLogin = "Admin";
         string password = "Admin";
 
-
+       
 
 
     }
