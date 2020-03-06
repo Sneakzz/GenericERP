@@ -24,5 +24,12 @@ namespace GenericERP
         {
             InitializeComponent();
         }
+
+        string mainLogin = "Admin";
+        string password = "Admin";
+
+
+
+
     }
 }
