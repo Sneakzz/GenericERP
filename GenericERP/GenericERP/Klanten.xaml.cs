@@ -37,10 +37,10 @@ namespace GenericERP
             string sql = null;
 
             // All the info required to reach your db. See connectionstrings.com
-            connetionString = ".\\SQLEXPRESS;Initial Catalog=Air; Trusted_Connection=False;";
+            connetionString = "Server=DESKTOP-RE8EGMK\\SQLEXPRESS; Database=ERP;Trusted_Connection=True";
 
             // Prepare a proper parameterized query 
-            sql = "insert into Main ([Firt Name], [Last Name]) values(@first,@last)";
+            sql = "insert into Klanten ([voornaam], [familienaam]) values(@first,@last)";
 
             // Create the connection (and be sure to dispose it at the end)
             using (SqlConnection cnn = new SqlConnection(connetionString))
